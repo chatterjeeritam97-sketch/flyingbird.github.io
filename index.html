@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bird Flapping Animation</title>
+  <style>
+    body { text-align: center; margin-top: 60px; }
+    #bird { width: 200px; height: auto; }
+  </style>
+</head>
+<body>
+  <h2 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive;">Bird Flapping Animation</h2>
+  <img id="bird" src="bird1.png" alt="Flapping Bird Animation">
+  <script>
+    const totalFrames = 8;
+    let currentFrame = 1;
+    const birdImg = document.getElementById('bird');
+
+    setInterval(() => {
+      currentFrame = currentFrame % totalFrames + 1;
+      birdImg.src = `bird${currentFrame}.png`;
+    }, 80); // 100ms per frame ≈ 10 frames/sec
+  </script>
+</body>
+</html>
